@@ -24,6 +24,10 @@ class StandardDeviationAverage(cutoff: Double) extends StatisticalDetector {
 
   }
 
+  /** Method to score anomalies based on their position against a threshold defined by the standard deviation
+   * @param dv a dense vector
+   * @return a boolean indicating if it is an anomaly and a double with the statistic
+   */
   override def anomalyScoring(dv: DenseVector[Double]): DetectorOutput = {
     val (mean, std) = fit(dv)
     val statistic: Double = abs(dv(-1) - mean)

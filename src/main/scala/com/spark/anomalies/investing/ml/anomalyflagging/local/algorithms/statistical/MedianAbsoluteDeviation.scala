@@ -23,15 +23,15 @@ class MedianAbsoluteDeviation(cutoff: Double) extends StatisticalDetector {
     (m, medianDeviation)
   }
 
-  /** Method to score the last element of a vector based on their position against the median deviation
+  /** Method to score anomalies based on their position against a threshold defined by the standard deviation
    * @param dv a dense vector
-   * @return a tuple containing a boolean and a statistic
+   * @return a boolean indicating if it is an anomaly and a double with the statistic
    */
   override def anomalyScoring(dv: DenseVector[Double]): DetectorOutput = {
     val (median, medianDeviation) = fit(dv)
     val demdianedValue = dv(-1) - median
     val statistics: Double = 0.6745 * (demdianedValue/medianDeviation)
-    DetectorOutput(statistics > cutoff, detectorName^)
+    DetectorOutput(statistics > cutoff, detectorName)
   }
 
 
