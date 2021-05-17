@@ -31,7 +31,7 @@ class MedianAbsoluteDeviation(cutoff: Double) extends StatisticalDetector {
     val (median, medianDeviation) = fit(dv)
     val demdianedValue = dv(-1) - median
     val statistics: Double = 0.6745 * (demdianedValue/medianDeviation)
-    DetectorOutput(statistics > cutoff, detectorName^)
+    DetectorOutput(statistics > cutoff, detectorName)
   }
 
 
