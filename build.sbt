@@ -10,8 +10,9 @@ lazy val invest = (project in file ("."))
       // Breeze - Last stable release [11.05.2021]
       "org.scalanlp" %% "breeze" % "1.2",
       // Breeze - The visualization library is distributed separately as well. It depends on LGPL code
-      "org.scalanlp" %% "breeze-viz" % "1.2"
-
+      "org.scalanlp" %% "breeze-viz" % "1.2",
+      // Yahoo Finance API TEST
+      "com.yahoofinance-api" % "YahooFinanceAPI" % "3.15.0"
     )
   )
 
