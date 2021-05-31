@@ -3,6 +3,7 @@
 *.iml
 *.ipr
 *.iws
+*.class
 .idea
 .idea/
 .idea/*
@@ -11,6 +12,17 @@ target/*
 
 !**/src/main/**/target/
 !**/src/test/**/target/
+.desktop/
+dist/*
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+.history
+.cache
+.lib/
 
-*.log
-*.class
+.bsp/
+
+.java-version
+

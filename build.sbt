@@ -11,6 +11,9 @@ lazy val invest = (project in file ("."))
       "org.scalanlp" %% "breeze" % "1.2",
       // Breeze - The visualization library is distributed separately as well. It depends on LGPL code
       "org.scalanlp" %% "breeze-viz" % "1.2",
+      // Kafka
+      "org.apache.kafka" % "kafka-clients" % "0.11.0.0",
+      "io.confluent" % "kafka-avro-serializer" % "6.0.0",
       // Yahoo Finance API TEST
       "com.yahoofinance-api" % "YahooFinanceAPI" % "3.15.0"
     )
