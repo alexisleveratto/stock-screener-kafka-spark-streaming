@@ -23,7 +23,7 @@ class StockProducer {
 
   def createKafkaProducer = {
     val properties: Properties = new Properties()
-    properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.)
+    // properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.)
   }
 
 
