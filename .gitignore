@@ -5,8 +5,9 @@
 *.iws
 .idea
 .idea/
+.idea/*
 target/
-.idea
+target/*
 
 !**/src/main/**/target/
 !**/src/test/**/target/

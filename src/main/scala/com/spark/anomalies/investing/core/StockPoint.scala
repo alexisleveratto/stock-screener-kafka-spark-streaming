@@ -4,10 +4,12 @@ import java.sql.Timestamp
 
 case class StockPoint(
                        val ticker: String,
+                       val timestamp: Timestamp,
+                       val open: Double,
                        val high: Double,
                        val low: Double,
-                       val open: Double,
                        val close: Double,
-                       val timestamp: Timestamp,
-                       val anomaly: Boolean
+                       val adjClose: Double,
+                       val volume: Double,
+                       val anomaly: Boolean = false
                       )
