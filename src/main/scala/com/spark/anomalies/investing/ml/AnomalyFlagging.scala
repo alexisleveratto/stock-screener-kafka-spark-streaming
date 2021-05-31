@@ -5,7 +5,7 @@ import com.spark.anomalies.investing.core.StockStreams
 class AnomalyFlagging {
 
   def flagAnomaly(stockStreams: StockStreams) = {
-    val localEnsamble = new LocalEnsamble()
+    // val localEnsamble = new LocalEnsamble()
   }
 
 }
