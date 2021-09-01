@@ -5,8 +5,8 @@
 [error] sbt.librarymanagement.ResolveException: Error downloading io.confluent:kafka-avro-serializer:6.0.0
 [error]   Not found
 [error]   Not found
-[error]   not found: C:\Users\USER\.ivy2\localio.confluent\kafka-avro-serializer\6.0.0\ivys\ivy.xml
-[error]   not found: https://repo1.maven.org/maven2/io/confluent/kafka-avro-serializer/6.0.0/kafka-avro-serializer-6.0.0.pom
+[error]   not found: C:\Users\NB27172\.ivy2\localio.confluent\kafka-avro-serializer\6.0.0\ivys\ivy.xml
+[error]   download error: Caught java.net.ConnectException: Connection timed out: connect (Connection timed out: connect) while downloading https://repo1.maven.org/maven2/io/confluent/kafka-avro-serializer/6.0.0/kafka-avro-serializer-6.0.0.pom
 [error] 	at lmcoursier.CoursierDependencyResolution.unresolvedWarningOrThrow(CoursierDependencyResolution.scala:258)
 [error] 	at lmcoursier.CoursierDependencyResolution.$anonfun$update$38(CoursierDependencyResolution.scala:227)
 [error] 	at scala.util.Either$LeftProjection.map(Either.scala:573)
@@ -31,14 +31,14 @@
 [error] 	at sbt.Execute.$anonfun$submit$1(Execute.scala:282)
 [error] 	at sbt.ConcurrentRestrictions$$anon$4.$anonfun$submitValid$1(ConcurrentRestrictions.scala:265)
 [error] 	at sbt.CompletionService$$anon$2.call(CompletionService.scala:64)
-[error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-[error] 	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:515)
-[error] 	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-[error] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-[error] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-[error] 	at java.base/java.lang.Thread.run(Thread.java:832)
+[error] 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[error] 	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+[error] 	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+[error] 	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+[error] 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+[error] 	at java.lang.Thread.run(Thread.java:748)
 [error] (update) sbt.librarymanagement.ResolveException: Error downloading io.confluent:kafka-avro-serializer:6.0.0
 [error]   Not found
 [error]   Not found
-[error]   not found: C:\Users\USER\.ivy2\localio.confluent\kafka-avro-serializer\6.0.0\ivys\ivy.xml
-[error]   not found: https://repo1.maven.org/maven2/io/confluent/kafka-avro-serializer/6.0.0/kafka-avro-serializer-6.0.0.pom
+[error]   not found: C:\Users\NB27172\.ivy2\localio.confluent\kafka-avro-serializer\6.0.0\ivys\ivy.xml
+[error]   download error: Caught java.net.ConnectException: Connection timed out: connect (Connection timed out: connect) while downloading https://repo1.maven.org/maven2/io/confluent/kafka-avro-serializer/6.0.0/kafka-avro-serializer-6.0.0.pom
