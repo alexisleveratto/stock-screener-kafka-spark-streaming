@@ -1,31 +1,43 @@
 package com.spark.anomalies.investing.kafka.producer
 
-import org.slf4j.{Logger, LoggerFactory}
-import org.apache.kafka.clients.producer._
+import com.fasterxml.jackson.databind.ser.std.NumberSerializers.LongSerializer
+import com.spark.anomalies.investing.kafka.dto.StockPrice
+import com.spark.anomalies.investing.kafka.serialization.JsonConverter
+import org.apache.kafka.clients.producer.{KafkaProducer, ProducerConfig, ProducerRecord}
 import org.apache.kafka.common.serialization.StringSerializer
 
-import java.util.Properties
-import java.util.concurrent.{BlockingQueue, LinkedBlockingQueue}
+import java.util.Properties;
 
 class StockProducer {
-  private val bootstrapServer: String = "127.0.0.1:9092"
 
-  val logger: Logger = LoggerFactory.getLogger(this.getClass.getName)
+  val BOOTSTRAP_URL = "localhost:9092"
+  val TOPIC_NAME = "stock-price"
 
-  val stocks: Array[String] = Array("AAPL")
-
-  def run = {
-    logger.info("Producer Setup")
-    // Client
-    /** Set up your blocking queues: Be sure to size these properly based on expected TPS of your stream */
-    val msgQueue: BlockingQueue[String] = new LinkedBlockingQueue[String](1000)
+  val kafkaProperties: Properties = {
+    val props = new Properties()
+    props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_URL)
+    props.put(ProducerConfig.CLIENT_ID_CONFIG, "stock-price-producer")
+    props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, classOf[LongSerializer].getName)
+    props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, classOf[StringSerializer].getName)
+    props
   }
 
-  def createKafkaProducer = {
-    val properties: Properties = new Properties()
-    // properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.)
+  val producer = new KafkaProducer[Long, String](kafkaProperties)
+
+  def send(stock: StockPrice) = {
+    val msg = JsonConverter.toJson(stock)
+    val record = new ProducerRecord[Long, String](TOPIC_NAME, System.currentTimeMillis(), msg)
+
+    producer.send(record)
   }
 
+  def close() = {
+    producer.flush()
+    producer.close()
+  }
 
+}
 
+object StockProducer {
+  def apply(): StockProducer = new StockProducer()
 }

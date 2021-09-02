@@ -22,6 +22,7 @@ lazy val invest = (project in file ("."))
       // Yahoo Finance API TEST
       "com.yahoofinance-api" % "YahooFinanceAPI" % "3.15.0"
     )
+
   )
 
 
