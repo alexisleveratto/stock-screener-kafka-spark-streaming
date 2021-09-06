@@ -1,2 +1,9 @@
-[debug] downloaded https://repo1.maven.org/maven2/io/confluent/kafka-avro-serializer/6.0.0/kafka-avro-serializer-6.0.0.pom
-[debug] downloaded https://repo1.maven.org/maven2/io/confluent/kafka-avro-serializer/6.0.0/kafka-avro-serializer-6.0.0.pom.sha1
+[debug] downloaded https://repo1.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.7.7/snappy-java-1.1.7.7.jar
+[debug] downloaded https://repo1.maven.org/maven2/com/github/luben/zstd-jni/1.4.5-6/zstd-jni-1.4.5-6.jar
+[debug] downloaded https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/2.7.0/kafka-clients-2.7.0.jar
+[debug] downloaded https://repo1.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.7.7/snappy-java-1.1.7.7-javadoc.jar
+[debug] downloaded https://repo1.maven.org/maven2/com/github/luben/zstd-jni/1.4.5-6/zstd-jni-1.4.5-6-sources.jar
+[debug] downloaded https://repo1.maven.org/maven2/com/github/luben/zstd-jni/1.4.5-6/zstd-jni-1.4.5-6-javadoc.jar
+[debug] downloaded https://repo1.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.7.7/snappy-java-1.1.7.7-sources.jar
+[debug] downloaded https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/2.7.0/kafka-clients-2.7.0-sources.jar
+[debug] downloaded https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/2.7.0/kafka-clients-2.7.0-javadoc.jar

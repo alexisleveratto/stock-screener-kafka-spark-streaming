@@ -1,7 +1,7 @@
 ThisBuild / scalaVersion := "2.13.5"
 ThisBuild / organization := "com.investing.spark"
 
-lazy val invest = (project in file ("."))
+lazy val invest = (project in file("."))
   .settings(
     name := "investing-anomalies-detection",
     version := "0.1",
@@ -14,13 +14,18 @@ lazy val invest = (project in file ("."))
 
       // Kafka
       "org.apache.kafka" % "kafka-clients" % "2.7.0",
-      "io.confluent" % "kafka-avro-serializer" % "6.0.0",
+      // "io.confluent" % "kafka-avro-serializer" % "6.0.0", // confluent is making sbt fail
 
-      // https://github.com/lightbend/config
+      // typesafe config - https://github.com/lightbend/config
       "com.typesafe" % "config" % "1.4.1",
 
       // Yahoo Finance API TEST
-      "com.yahoofinance-api" % "YahooFinanceAPI" % "3.15.0"
+      "com.yahoofinance-api" % "YahooFinanceAPI" % "3.15.0",
+
+      // log4j - https://logging.apache.org/log4j/2.x/maven-artifacts.html
+      "org.apache.logging.log4j" % "log4j-api" % "2.14.1",
+      "org.apache.logging.log4j" % "log4j-core" % "2.14.1"
+
     )
 
   )

@@ -13,7 +13,7 @@ class StockProducer {
   val BOOTSTRAP_URL = "localhost:9092"
   val TOPIC_NAME = "stock-price"
 
-  val kafkaProperties: Properties = {
+  val kafkaProducerProperties: Properties = {
     val props = new Properties()
     props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_URL)
     props.put(ProducerConfig.CLIENT_ID_CONFIG, "stock-price-producer")
@@ -22,7 +22,7 @@ class StockProducer {
     props
   }
 
-  val producer = new KafkaProducer[Long, String](kafkaProperties)
+  val producer = new KafkaProducer[Long, String](kafkaProducerProperties)
 
   def send(stock: StockPrice) = {
     val msg = JsonConverter.toJson(stock)
