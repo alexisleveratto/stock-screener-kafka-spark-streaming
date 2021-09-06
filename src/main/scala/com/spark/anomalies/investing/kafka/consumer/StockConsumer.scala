@@ -54,3 +54,7 @@ class StockConsumer(id: String, appProperties: GenericApplicationProperties) ext
   }
 
 }
+
+object StockConsumer {
+  def apply(id: String, appProperties: GenericApplicationProperties): StockConsumer = new StockConsumer(id, appProperties)
+}
