@@ -24,8 +24,9 @@ lazy val invest = (project in file("."))
 
       // log4j - https://logging.apache.org/log4j/2.x/maven-artifacts.html
       "org.apache.logging.log4j" % "log4j-api" % "2.14.1",
-      "org.apache.logging.log4j" % "log4j-core" % "2.14.1"
+      "org.apache.logging.log4j" % "log4j-core" % "2.14.1",
 
+      "org.elasticsearch" % "elasticsearch" % "2.3.5"
     )
 
   )
