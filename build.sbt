@@ -26,7 +26,19 @@ lazy val invest = (project in file("."))
       "org.apache.logging.log4j" % "log4j-api" % "2.14.1",
       "org.apache.logging.log4j" % "log4j-core" % "2.14.1",
 
-      "org.elasticsearch" % "elasticsearch" % "2.3.5"
+      "org.elasticsearch" % "elasticsearch" % "2.3.5",
+
+      // https://github.com/scopt/scopt
+      "com.github.scopt" %% "scopt" % "4.0.0",
+
+      // https://mvnrepository.com/artifact/org.apache.spark/spark-core
+      "org.apache.spark" % "spark-core" % "3.1.1",
+      // https://mvnrepository.com/artifact/org.apache.spark/spark-sql
+      "org.apache.spark" % "spark-sql" % "3.1.1" % "provided"
+
+
+
+
     )
 
   )
