@@ -1,4 +1,5 @@
-ThisBuild / scalaVersion := "2.13.5"
+// ThisBuild / scalaVersion := "2.13.5"
+ThisBuild / scalaVersion := "2.12.5"
 ThisBuild / organization := "com.investing.spark"
 
 lazy val invest = (project in file("."))
@@ -32,9 +33,9 @@ lazy val invest = (project in file("."))
       "com.github.scopt" %% "scopt" % "4.0.0",
 
       // https://mvnrepository.com/artifact/org.apache.spark/spark-core
-      "org.apache.spark" % "spark-core" % "3.1.1",
+      "org.apache.spark" %% "spark-core" % "3.1.1",
       // https://mvnrepository.com/artifact/org.apache.spark/spark-sql
-      "org.apache.spark" % "spark-sql" % "3.1.1" % "provided"
+      "org.apache.spark" %% "spark-sql" % "3.1.1" % "provided"
 
 
 
