@@ -39,9 +39,28 @@ class StockConsumer(id: String, appProperties: GenericApplicationProperties) ext
   override def run(): Unit = {
     consumer.subscribe(topics.asJava)
     logger.info(s"$id subscribed to $topics")
+    // ToDo : CHANGE while(true){...} for a timeout .  something like (System.currentTimeMillis() < endTime)
     while (true) {
-      // ToDo : CHANGE while(true){...} for a timeout
-      // ToDo - make the poll
+      val records = consumer.poll(Duration.ofMillis(100))
+
+      logger.info(s"Received ${records.count()} records")
+      records.forEach(
+        stock =>
+          println(
+            s"${Thread.currentThread().getName} : id=$id, offset=${stock.offset}, key=${stock.key()}, value=${stock.value()}, timestamp=${stock.timestamp()}"
+          )
+      )
+      if (records.count() > 0) {
+        logger.info("Committing offset ... ")
+        consumer.commitSync()
+        logger.info("Offset have been committed")
+        try {
+          Thread.sleep(1000)
+        } catch {
+          case e: InterruptedException => e.printStackTrace()
+        }
+      }
+
     }
 
   }

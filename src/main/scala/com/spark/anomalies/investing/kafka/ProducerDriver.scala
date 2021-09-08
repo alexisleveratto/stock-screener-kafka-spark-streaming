@@ -6,14 +6,14 @@ import com.spark.anomalies.investing.kafka.producer.StockProducer
 
 import java.util
 
-class ProducerDriver {
+class ProducerDriver extends SparkRun {
 
-  def execute(applicationProperties: GenericApplicationProperties): Unit = {
+  override def execute(applicationProperties: GenericApplicationProperties): Unit = {
     val stocks = List("APPL", "TWT") // ToDo : move this to app properties
 
     val numberOfProducers = 1000 // ToDo : move this to app properties
 
-    val stockProducer = new StockProducer()
+    val stockProducer = new StockProducer(applicationProperties)
 
     stocks.foreach( // ToDo : Instead of one stock for each ticker make a timeframe
       ticker => {
