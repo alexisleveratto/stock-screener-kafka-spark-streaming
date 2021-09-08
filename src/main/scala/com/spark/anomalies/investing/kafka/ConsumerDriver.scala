@@ -5,7 +5,7 @@ import java.util.UUID
 
 import java.util.concurrent.Executors
 
-class ConsumerDriver {
+class   ConsumerDriver {
 
   def execute(applicationProperties: GenericApplicationProperties): Unit = {
     val numberConsumers = 2 // ToDo add this to spark-submit or application properties

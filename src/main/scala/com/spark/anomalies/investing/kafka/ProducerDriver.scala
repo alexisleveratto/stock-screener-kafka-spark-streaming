@@ -10,11 +10,12 @@ class ProducerDriver {
 
   def execute(applicationProperties: GenericApplicationProperties): Unit = {
     val stocks = List("APPL", "TWT") // ToDo : move this to app properties
-    val numerOfProducers = 1000 // ToDo : move this to app properties
+
+    val numberOfProducers = 1000 // ToDo : move this to app properties
 
     val stockProducer = new StockProducer()
 
-    stocks.foreach(
+    stocks.foreach( // ToDo : Instead of one stock for each ticker make a timeframe
       ticker => {
         val stock = new StockPrice(ticker, 1000) // ToDo get price from yahoo finance
         stockProducer.send(stock)
