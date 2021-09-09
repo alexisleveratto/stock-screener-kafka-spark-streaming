@@ -9,6 +9,8 @@ import java.util
 class ProducerDriver extends SparkRun {
 
   override def execute(applicationProperties: GenericApplicationProperties): Unit = {
+    println("TOCHI SPARK")
+    /*
     val stocks = List("APPL", "TWT") // ToDo : move this to app properties
 
     val numberOfProducers = 1000 // ToDo : move this to app properties
@@ -22,6 +24,8 @@ class ProducerDriver extends SparkRun {
       }
     )
     stockProducer.close()
+
+     */
   }
 
 }
