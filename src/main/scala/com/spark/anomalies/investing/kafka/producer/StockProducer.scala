@@ -40,5 +40,5 @@ class StockProducer(appProperties: GenericApplicationProperties) {
 }
 
 object StockProducer {
-  def apply(): StockProducer = new StockProducer()
+  def apply(appProperties: GenericApplicationProperties): StockProducer = new StockProducer(appProperties)
 }
