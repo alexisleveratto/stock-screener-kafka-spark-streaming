@@ -1,6 +1,16 @@
-// ThisBuild / scalaVersion := "2.13.5"
+ThisBuild / version := "0.1.0-SNAPSHOT"
 ThisBuild / scalaVersion := "2.12.5"
 ThisBuild / organization := "com.investing.spark"
+
+ThisBuild / assemblyMergeStrategy := {
+  case PathList("javax", "servlet", xs @ _*)         => MergeStrategy.first
+  case PathList(ps @ _*) if ps.last endsWith ".html" => MergeStrategy.first
+  case PathList(ps @ _*) if ps.last endsWith ".jar"  => MergeStrategy.first
+  case "application.conf"                            => MergeStrategy.concat
+  case "unwanted.txt"                                => MergeStrategy.discard
+  case _                                             => MergeStrategy.last
+
+}
 
 lazy val invest = (project in file("."))
   .settings(
@@ -36,12 +46,7 @@ lazy val invest = (project in file("."))
       "org.apache.spark" %% "spark-core" % "3.1.1",
       // https://mvnrepository.com/artifact/org.apache.spark/spark-sql
       "org.apache.spark" %% "spark-sql" % "3.1.1" % "provided"
-
-
-
-
     )
-
   )
 
 
