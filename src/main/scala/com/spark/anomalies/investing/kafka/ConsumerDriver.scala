@@ -4,9 +4,8 @@ import com.spark.anomalies.investing.kafka.consumer.StockConsumer
 
 import java.util.UUID
 import java.util.concurrent.Executors
-import java.time.Duration
 
-class ConsumerDriver {
+object ConsumerDriver extends SparkRun {
 
   def execute(applicationProperties: GenericApplicationProperties): Unit = {
     val numberConsumers = 2 // ToDo add this to spark-submit or application properties
