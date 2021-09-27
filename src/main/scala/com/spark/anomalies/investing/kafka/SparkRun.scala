@@ -5,13 +5,23 @@ import org.apache.spark.sql.SparkSession
 
 trait SparkRun {
   def main(args: Array[String]): Unit = {
-    val spark = SparkSession.builder().appName("Stock Streamer")
-      .master(args(0))
-      .getOrCreate()
     val appProperties = new GenericApplicationProperties("global")
 
-    execute(appProperties)
+    // Start Spark Session
+    val spark = SparkSession
+      .builder
+      .appName("StockStreamerApp")
+      .master(args(0))
+      .getOrCreate()
 
+    // Set timezone
+    spark.conf.set("spark.sql.session.timeZone", "UTC")
+
+    // Enable streaming metrics and set log level
+    spark.conf.set("spark.sql.streaming.metricsEnabled", value=true)
+    spark.sparkContext.setLogLevel("INFO")
+
+    execute(appProperties)
   }
 
   def execute(applicationProperties: GenericApplicationProperties)

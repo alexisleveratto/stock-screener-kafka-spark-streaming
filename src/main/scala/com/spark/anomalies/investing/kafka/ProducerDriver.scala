@@ -4,14 +4,11 @@ import com.spark.anomalies.investing.kafka.common.GenericApplicationProperties
 import com.spark.anomalies.investing.kafka.dto.StockPrice
 import com.spark.anomalies.investing.kafka.producer.StockProducer
 
-
 object ProducerDriver extends SparkRun {
 
   override def execute(applicationProperties: GenericApplicationProperties): Unit = {
 
-    val stocks = List("APPL", "TWT") // ToDo : move this to app properties
-
-    val numberOfProducers = 1000 // ToDo : move this to app properties
+    val stocks = List("APPL") // ToDo : move this to app properties
 
     val stockProducer = new StockProducer(applicationProperties)
 
