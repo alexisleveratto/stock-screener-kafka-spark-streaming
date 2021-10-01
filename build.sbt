@@ -42,7 +42,10 @@ lazy val invest = (project in file("."))
       // https://mvnrepository.com/artifact/org.apache.spark/spark-core
       "org.apache.spark" %% "spark-core" % "3.1.1",
       // https://mvnrepository.com/artifact/org.apache.spark/spark-sql
-      "org.apache.spark" %% "spark-sql" % "3.1.1" % "provided"
+      "org.apache.spark" %% "spark-sql" % "3.1.1", //  % "provided",
+
+      // "com.typesafe.scala-logging" %% "scala-logging" % "3.9.4"
+      "com.typesafe.scala-logging" %% "scala-logging" % "3.9.4"
     )
   )
 
